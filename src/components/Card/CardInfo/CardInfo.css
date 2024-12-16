@@ -1,0 +1,242 @@
+.cardinfo {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  min-width: 550px;
+  width: fit-content;
+  max-width: 650px;
+  height: fit-content;
+}
+
+.cardinfo_box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardinfo_box_title {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cardinfo_box_title p {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cardinfo_box_title svg {
+  height: 18px;
+  width: 18px;
+}
+
+.cardinfo_box_labels {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cardinfo_box_colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* Slightly reduce the gap between color circles */
+}
+
+.cardinfo_box_colors span {
+  width: 30px; /* Smaller size for color circles */
+  height: 30px;
+  border-radius: 50%; /* Circle shape */
+  cursor: pointer;
+  transition: border 0.2s ease; /* Smooth transition for border change */
+  border: 2px solid transparent; /* Default border */
+}
+
+.cardinfo_box_colors span.selected {
+  border: 3px solid black; /* Highlight selected color with a thicker border */
+}
+
+.cardinfo_box_colors span:hover {
+  border: 3px solid #333; /* Add border on hover */
+}
+
+.cardinfo_box_add-label input {
+  width: 100%; /* Make the input take the full width */
+  padding: 10px; /* Add padding for better visual appearance */
+  margin-bottom: 10px; /* Space below the input */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Set font size */
+  box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+.cardinfo_box_add-label input:focus {
+  outline: none; /* Remove default outline */
+  border-color: #4caf50; /* Green border on focus */
+}
+
+/* Add Button Styling */
+.cardinfo_box_add-label button,
+.cardinfo_box_add-task button,
+.cardinfo_box_add-label label svg,
+.cardinfo_box_task_list button {
+  background-color: #4caf50; /* Green background for the button */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  padding: 10px 15px; /* Padding around the text */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 14px; /* Font size */
+  margin-top: 10px; /* Space between the input and button */
+}
+
+.cardinfo_box_add-label button:hover,
+.cardinfo_box_add-task button:hover,
+.cardinfo_box_task_list button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.cardinfo_box_add-label button:disabled,
+.cardinfo_box_add-task button:disabled,
+.cardinfo_box_task_list button:disabled {
+  background-color: #ccc; /* Disabled button style */
+  cursor: not-allowed; /* Change cursor for disabled state */
+}
+
+.cardinfo_box_labels label svg {
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+.cardinfo_box ul {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.cardinfo_box ul li {
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cardinfo_box ul .li_active {
+  box-shadow: 0 0 0 3px yellow;
+}
+
+.cardinfo_box_progress-bar {
+  width: 100%;
+  border-radius: 30px;
+  height: 10px;
+  border: 1px solid #ccc;
+}
+
+.cardinfo_box_progress {
+  height: 100%;
+  border-radius: 30px;
+  background-color: skyblue;
+  width: 0;
+  transition: 200ms;
+}
+
+.cardinfo_box_task_list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.cardinfo_box_task_checkbox {
+  display: flex;
+  gap: 10px;
+}
+
+.cardinfo_box_task_checkbox input,
+.cardinfo_box_task_checkbox svg {
+  height: 18px;
+  width: 18px;
+  outline: none;
+  cursor: pointer;
+}
+
+.cardinfo_box_task_checkbox p {
+  flex: 1;
+  line-height: 18px;
+}
+
+.cardinfo_box_task_checkbox .completed {
+  text-decoration-line: line-through;
+}
+
+.cardinfo_box input[type="date"] {
+  width: fit-content;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/* Add Task Button Styling */
+.cardinfo_box_task button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cardinfo_box_task button:hover {
+  background-color: #45a049;
+}
+
+.cardinfo_box_task button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* General container for action buttons */
+.cardinfo_buttons {
+  display: flex;
+  justify-content: space-between; /* Space between Save & Cancel */
+  margin-top: 20px; /* Add space above the buttons */
+  gap: 10px; /* Small gap between the buttons */
+}
+
+/* Save Changes Button */
+.save-button {
+  background-color: #4caf50; /* Green for positive action */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+}
+
+/* Cancel Button */
+.cancel-button {
+  background-color: #f44336; /* Red for cancel action */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #d32f2f;
+}
+
